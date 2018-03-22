@@ -33,10 +33,11 @@ int main(int argc, char** argv) {
     
     //Process/Map inputs to outputs
     cout<<"This program will determine your horoscope sign from your birthday!"<<endl;
-    cout<<"Type the month of your birthday"<<endl;
-    cin>>setw(2)>>bdaymon;               //Birtthday Input (Month)
+    cout<<"Type the month of your birthday using 1-12"<<endl;
+    if ((!(cin >> bdaymon))||(bdaymon >= 1) || (bdaymon <= 12))
+        {bday<=12?              //Birtthday Input (Month)
     cout<<"Now type the day of your birthday"<<endl;
-    cin>>setw(2)>>bdayday;                 //Birthday Input (Day)
+    cin>>bdayday;                 //Birthday Input (Day)
     
     
     
