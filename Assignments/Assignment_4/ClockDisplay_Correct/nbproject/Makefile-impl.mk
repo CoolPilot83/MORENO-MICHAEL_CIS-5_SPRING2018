@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=ClockDisplay
+PROJECTNAME=ClockDisplay_Correct
 
 # Active Configuration
 DEFAULTCONF=Debug
