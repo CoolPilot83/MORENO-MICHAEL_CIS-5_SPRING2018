@@ -18,6 +18,12 @@ using namespace std; //namespace I/O steam library created
 //Math, Physics, Science, Conversions, 2-D Array Columns
 
 // Function Prototypes
+void menu();
+void prblm1();
+void prblm2();
+void prblm3();
+void prblm4();
+void prblm5();
 
 //Execution Begins Here!
 int main(int argc, char** argv) {
@@ -25,7 +31,7 @@ int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
     
     //Declare Variables
-    
+    int cardcol, cardval, topdeck, plyrc1, plyrc2, plyrc3, plyrc4, plyrc5, plyrc6;
     
     // Initial Variables
     
