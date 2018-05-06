@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
-CND_ARTIFACT_NAME_Debug=military_budget
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/military_budget
+CND_ARTIFACT_NAME_Debug=2._military_budget
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/2._military_budget
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
-CND_PACKAGE_NAME_Debug=militarybudget.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/militarybudget.tar
+CND_PACKAGE_NAME_Debug=2.militarybudget.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/2.militarybudget.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
-CND_ARTIFACT_NAME_Release=military_budget
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/military_budget
+CND_ARTIFACT_NAME_Release=2._military_budget
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/2._military_budget
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
-CND_PACKAGE_NAME_Release=militarybudget.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/militarybudget.tar
+CND_PACKAGE_NAME_Release=2.militarybudget.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/2.militarybudget.tar
 #
 # include compiler specific variables
 #

@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=NasaBudget
+PROJECTNAME=5 .NasaBudget
 
 # Active Configuration
 DEFAULTCONF=Debug
