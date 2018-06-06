@@ -16,7 +16,7 @@ using namespace std;
 //User Libraries Here
 
 //Global Constants Only, No Global Variables
-//Like PI, e, Gravity, or conversions
+//Like PI, e, Gravity, or conversions 
 
 //Function Prototypes Here
 void StartMN();                   //Start Menu w/Play or View Current Score
@@ -27,9 +27,11 @@ char color(char);                 //Color for Deck
 char face(char);                  //Face for Deck 
 void shuffle(char [], char);      //Shuffle Deck
 void prtDeck(char [], char, char);//Print Deck
-void prtDck(char [], char, char); //Print Deck
-//void deal1(char [],vector<int>,vector<int>,int);          //Deal 8 Cards to Each Player
-
+void prtDck();                    //Start of Game Print Deck
+void filPlry(char [][]);
+void game1();
+void turn1();
+void turn2();
 
 //Program Execution Begins Here
 int main(int argc, char** argv) {
@@ -39,42 +41,57 @@ int main(int argc, char** argv) {
     //Declare all Variables Here
     const char DECKSZ=108;
     char deck[DECKSZ];
-    //std::string deck;
-    char HNDSZ=8;
-    char hand[HNDSZ];
+    bool DkChk[DECKSZ];
+    char tempDk[DECKSZ];
+    char NCARDS=8;
     char choice1;
     char choice2;
-    
+    char choice3;
+    char NPLYRS;
+
+ //
     //Menu for Play Game or View Score Board
         //Loop and Display menu
     StartMN();
     cin>>choice1;
     switch(choice1){
-        case '1':{filDeck(deck, DECKSZ);prtDck(deck, DECKSZ, 25);GmPlrCt();
-            break;}
+        case '1':{filDeck(deck, DECKSZ); prtDck(); prtDeck(deck, DECKSZ, 25);
+        GmPlrCt(); break;}
         case '2':{ScBdDip();break;}  
-        default: {
-            cout<<"Exiting Program"<<endl;
-            exit(EXIT_SUCCESS);
+        default: {cout<<"Exiting Program"<<endl;
+        exit(EXIT_SUCCESS);
         }
-    
+    }
+
     //Menu for Player Count
     cin>>choice2;
     switch(choice2){
         case '1':{break;}
         case '2':{break;}
         case '3':{break;}  
-        default: {
-            cout<<"Exiting Program"<<endl;
-            exit(EXIT_SUCCESS);
+        default: {cout<<"Exiting Program"<<endl;
+        exit(EXIT_SUCCESS);
         }
-
-    //Shuffle Deck
-    shuffle(deck, DECKSZ);
-    //prtDeck(deck, DECKSZ, 25);
+    }
     
-    //Deal Them Out!
-    //deal1(deck[DECKSZ], vector<pHand1>,vector<pHand2>, 8);
+    if(choice2=='1'){
+        NPLYRS=choice2+1;
+    }
+    if(choice2=='2'){
+        NPLYRS=choice2+1;
+    }
+    if(choice2=='3'){
+        NPLYRS=choice2-1;
+    }
+    NPLYRS-='0';
+    static_cast<int>(NPLYRS);
+    char plyrHnd[NPLYRS][DECKSZ];
+    
+    //Shuffle Deck and Fill
+    shuffle(deck, DECKSZ);
+    filPlry(deck[NPLYRS][DECKSZ]);
+    
+
     //Process/Calculations Here
     
     //Output Located Here
@@ -82,6 +99,12 @@ int main(int argc, char** argv) {
 
     //Exit
     return 0;
+}
+
+
+
+void filPlry(char c[][]){
+    
 }
 
 void StartMN(){
@@ -159,15 +182,51 @@ void prtDeck(char deck[], char nCard, char perLine){
     }
 }
 
-void prtDck(char deck[], char nCard, char perLine){
+void prtDck(){
     cout<<endl;
     cout<<"Here is the Deck. It will be shuffled in a moment!"<<endl;
-    for(int card=0;card<nCard;card++){
-        cout<<face(deck[card])<<color(deck[card])<<wilds(deck[card])<<" ";
-        if(card%perLine==(perLine-1))cout<<endl;
-        
-    }
 }
 
+//void game1(){
+//    turn1();
+//    turn2();
+//    
+//    if(hand1<=1){
+//        cout<<"Congrats! You Have Won!"<<endl;
+//        exit(EXIT_SUCCESS);
+//    }
+//    if(hand2<=1){
+//        cout<<"You Have Lost!"<<endl;
+//        exit(EXIT_SUCCESS);
+//    }
+//}
 
-
+//void turn1(){
+//    cout<<"Lets Play!"<<endl;
+//    cout<<deck[DECKSZ][0]<<endl;
+//    cout<<hand1[HNDSZ];
+//    cout<<"Select a Card that is either matches the Displayed Card from "
+//            "the Deck with a number or color!"<<endl;
+//    switch(choice3){
+//        case '1':{SUBTRCT=deck[DECKSZ]-107;break;}
+//        case '2':{break;}
+//        case '3':{break;}  
+//        default: {cout<<"Exiting Program"<<endl;
+//        exit(EXIT_SUCCESS);
+//        }
+//}
+//
+//void turn2(){
+//    cout<<"Lets Play!"<<endl;
+//    cout<<deck[DECKSZ][0]<<endl;
+//    cout<<hand2[HNDSZ];
+//    cout<<"Select a Card that is either matches the Displayed Card from "
+//            "the Deck with a number or color!"<<endl;
+//    switch(choice3){
+//        case '1':{SUBTRCT=deck[DECKSZ]-107;break;}
+//        case '2':{break;}
+//        case '3':{break;}  
+//        default: {cout<<"Exiting Program"<<endl;
+//        exit(EXIT_SUCCESS);
+//        }
+//}

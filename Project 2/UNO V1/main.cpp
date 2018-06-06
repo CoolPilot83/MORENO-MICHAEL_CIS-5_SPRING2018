@@ -7,8 +7,6 @@
 
 //System Libraries Here
 #include <iostream>
-#include <fstream>
-#include <cstdlib>
 using namespace std;
 
 //User Libraries Here
@@ -17,16 +15,15 @@ using namespace std;
 //Like PI, e, Gravity, or conversions
 
 //Function Prototypes Here
-void StartMN(int);                 //Start Menu w/Play or View Current Score
-void ScBdDip();                 //Score Board Read from File
-void GmPlrCt(int);                 //Game Player Count Menu
 void filDEck(char [], char);    //Fill Deck Function
 char color(char);               //Color for Deck
 char face(char);                //Face for Deck 
 void shuffle(char [], char);    //Shuffle Deck
 void prtDeck(char [], char, char);//Print Deck
 char pulDeck(char [], char);    //Pull from Deck
-
+void StartMN();                 //Start Menu w/Play or View Current Score
+void ScBdDip();                 //Score Board Read from File
+void GmPlrCt();                 //Game Player Count Menu
 
 //Program Execution Begins Here
 int main(int argc, char** argv) {
@@ -34,34 +31,24 @@ int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
     
     //Declare all Variables Here
-    ofstream out;
     const char DECKSZ=108;
     char deck[DECKSZ];
     const char HNDSZ=8;
     char hand[HNDSZ];
     char choice1;
-    char choice2;
     
     //Menu for Play Game or View Score Board
         //Loop and Display menu
 
-    StartMN();
-    cin>>choice1;
-    switch(choice1){
-        case '1':{GmPlrCt();break;}
-        case '2':{ScBdDip();break;}  
-        default: cout<<"Exiting Program"<<endl;
+        StartMN();
+        cin>>choice1;
+        switch(choice1){
+            case '1':{GmPlrCt();break;}
+            case '2':{ScBdDip();break;}  
+            default: cout<<"Exiting Program"<<endl;
         }
     
-    //Menu for Player Count
-    GmPlrCt(); 
-    cin>>choice2;
-    switch(choice2){
-        case '1':{GmPlrCt();break;}
-        case '2':{ScBdDip();break;}  
-        case '3':{ScBdDip();break;}  
-        default: cout<<"Exiting Program"<<endl;
-        }
+    
     
     //Input or initialize values Here
     filDEck(deck, DECKSZ);
@@ -77,49 +64,21 @@ int main(int argc, char** argv) {
     return 0;
 }
 
-void StartMN(){
+void menu(){
     //Display menu
     cout<<endl<<"Choose from the following Menu"<<endl;
     cout<<"Type 1 to Play UNO!"<<endl;
-    cout<<endl;
     cout<<"Type 2 for Current Score Board"<<endl;
-    cout<<endl;
     cout<<"Type any other key to Exit"<<endl;
 }
-void GmPlrCt(){
-    //Display menu
-    cout<<endl<<"Choose from the following Menu"<<endl;
-    cout<<"Type 1 for You vs. 1x AI!"<<endl;
-    cout<<endl;
-    cout<<"Type 2 for You vs. 2x AI!"<<endl;
-    cout<<endl;
-    cout<<"Type 3 for You vs. A Friend vs. 1x AI!"<<endl;
-    cout<<endl;
-    cout<<"Type any other key to Exit"<<endl;
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 void ScBdDip(){
-    scoreBoard.out
-    Fstream.in scoreboard.out;
+    return;
 }
+
+void GmPlrCt(){
+    return;
+} 
 
 void filDEck(char c[], char n){
     for(int eachCrd=0;eachCrd<n;eachCrd++){
@@ -163,6 +122,9 @@ void shuffle(char c[], char nCard){
 
 void prtDeck(char deck[], char nCard, char perLine){
     for(int card=0;card<nCard;card++){
+        //if(face(deck[card])='W'){
+        //    cout<<color(deck[card])<<wilds(deck[card]);
+        //}
         cout<<face(deck[card])<<color(deck[card])<<wilds(deck[card])<<" ";
         if(card%perLine==(perLine-1))cout<<endl;
         
