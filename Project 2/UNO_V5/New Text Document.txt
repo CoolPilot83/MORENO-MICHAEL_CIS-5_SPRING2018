@@ -1,0 +1,24 @@
+deck
+0-9 
+RGBY
+W 
+W4
+
+RAND
+
+
+
+
+
+plyrHnd
+
+
+0 -> Rand 8  PLYR1 {Ex(0R 6R 9R 4Y 3G SG PG W4)}
+
+1 -> Rand 8  PLYR2 {Ex(2R 4R 9B 7Y 0G PG PY 5G)}
+
+2 -> Rand 8  PLYR3 {Ex(2R 4R 9B 7Y 0G PG PY 5G)}
+
+3 -> Temp1   
+
+4 -> Temp2

@@ -17,6 +17,7 @@ using namespace std;
 
 //Global Constants Only, No Global Variables
 //Like PI, e, Gravity, or conversions 
+const char DECKSZ=108;
 
 //Function Prototypes Here
 void StartMN();                   //Start Menu w/Play or View Current Score
@@ -28,7 +29,7 @@ char face(char);                  //Face for Deck
 void shuffle(char [], char);      //Shuffle Deck
 void prtDeck(char [], char, char);//Print Deck
 void prtDck();                    //Start of Game Print Deck
-void filPlry(char [][]);
+char filPlry(char [][DECKSZ],char);
 void game1();
 void turn1();
 void turn2();
@@ -39,7 +40,7 @@ int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
     
     //Declare all Variables Here
-    const char DECKSZ=108;
+    
     char deck[DECKSZ];
     bool DkChk[DECKSZ];
     char tempDk[DECKSZ];
@@ -73,7 +74,6 @@ int main(int argc, char** argv) {
         exit(EXIT_SUCCESS);
         }
     }
-    
     if(choice2=='1'){
         NPLYRS=choice2+1;
     }
@@ -85,17 +85,15 @@ int main(int argc, char** argv) {
     }
     NPLYRS-='0';
     static_cast<int>(NPLYRS);
+    
     char plyrHnd[NPLYRS][DECKSZ];
     
     //Shuffle Deck and Fill
     shuffle(deck, DECKSZ);
-    filPlry(deck[NPLYRS][DECKSZ]);
+    filPlry(deck,NPLYRS);  //filPlry(deck[NPLYRS][DECKSZ]);
     
 
-    //Process/Calculations Here
-    
-    //Output Located Here
- 
+
 
     //Exit
     return 0;
@@ -103,7 +101,8 @@ int main(int argc, char** argv) {
 
 
 
-void filPlry(char c[][]){
+
+void filPlry(char c[][DECKSZ],char NPLYRS){
     
 }
 
